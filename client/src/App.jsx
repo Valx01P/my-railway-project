@@ -1,26 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 function App() {
-  const [phrase, setPhrase] = useState('Loading...');
+  const [phrase, setPhrase] = useState('')
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
-    // Replace this URL with the actual URL of your Express server on Railway.
-    // e.g., https://my-express-server.up.railway.app
-    fetch(`${import.meta.env.VITE_API_URL}`)
-      .then(res => res.text())
-      .then(text => setPhrase(text))
+    fetch(`${import.meta.env.VITE_API_URL}/api/phrase`)
+      .then(res => res.json())
+      .then(data => {
+        setPhrase(data.phrase)
+        setLoading(false)
+      })
       .catch(err => {
-        console.error(err);
-        setPhrase('Error fetching phrase');
-      });
-  }, []);
+        setError(err.message)
+        setLoading(false)
+      })
+  }, [])
 
+  if (loading) return <div>Loading...</div>
+  if (error) return <div>Error: {error}</div>
+  
   return (
     <div>
-      <h1>Vite + React + Railway</h1>
+      <h1>Message from Database:</h1>
       <p>{phrase}</p>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

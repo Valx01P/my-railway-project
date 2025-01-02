@@ -1,8 +1,9 @@
-# server/railway.toml
-
 [build]
 builder = "DOCKERFILE"
-dockerfilePath = "/server/Dockerfile"
+dockerfilePath = "Dockerfile"
 
 [deploy]
-startCommand = "node index.js"  # Or however you run your server
+startCommand = ""
+healthcheckPath = "/api/phrase"
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
