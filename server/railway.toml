@@ -2,7 +2,7 @@
 
 [build]
 builder = "DOCKERFILE"
-dockerfilePath = "Dockerfile"
+dockerfilePath = "/server/Dockerfile"
 
 [deploy]
 startCommand = "node index.js"  # Or however you run your server

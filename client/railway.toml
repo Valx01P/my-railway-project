@@ -2,7 +2,7 @@
 
 [build]
 builder = "DOCKERFILE"
-dockerfilePath = "Dockerfile"  # We assume your Dockerfile is client/Dockerfile
+dockerfilePath = "/client/Dockerfile"  # We assume your Dockerfile is client/Dockerfile
 
 [deploy]
 startCommand = "" # or null if you don't need a custom command
