@@ -1,7 +1,0 @@
-[services.client]
-rootDirectory = "client"          # path to your client folder
-dockerfilePath = "client/Dockerfile"  # path to Dockerfile within that folder
-
-[services.server]
-rootDirectory = "server"
-dockerfilePath = "server/Dockerfile"

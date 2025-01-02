@@ -1,0 +1,3 @@
+[services.client]
+rootDirectory = "client"          # path to your client folder
+dockerfilePath = "Dockerfile"  # path to Dockerfile within that folder
