@@ -1,10 +1,13 @@
 # ---- Stage 1: Build the React app ----
-  FROM node:16-slim AS build
+  FROM node:18.17-bullseye AS build
   WORKDIR /app
   
-  # Copy package files and install
+  # Copy package files
   COPY package*.json ./
+  
+  # Install dependencies and specific rollup package
   RUN npm install
+  RUN npm install @rollup/rollup-linux-x64-gnu
   
   # Copy all client source code and build
   COPY . .
@@ -24,4 +27,3 @@
   
   # Run Nginx in the foreground (standard container entrypoint)
   CMD ["nginx", "-g", "daemon off;"]
-  
