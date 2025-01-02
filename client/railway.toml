@@ -1,3 +1,9 @@
-[services.client]
-rootDirectory = "client"          # path to your client folder
-dockerfilePath = "Dockerfile"  # path to Dockerfile within that folder
+# client/railway.toml
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"  # We assume your Dockerfile is client/Dockerfile
+
+[deploy]
+startCommand = "" # or null if you don't need a custom command
+# you can set things like healthcheckPath, restartPolicyType, etc.

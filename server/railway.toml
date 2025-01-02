@@ -1,3 +1,8 @@
-[services.server]
-rootDirectory = "server"
+# server/railway.toml
+
+[build]
+builder = "DOCKERFILE"
 dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "node index.js"  # Or however you run your server
