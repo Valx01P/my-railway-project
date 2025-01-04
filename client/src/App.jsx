@@ -6,7 +6,7 @@ function App() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/phrase`)
+    fetch(`/api/node/`)
       .then(res => res.json())
       .then(data => {
         setPhrase(data.phrase)
