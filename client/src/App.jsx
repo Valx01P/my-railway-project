@@ -6,7 +6,7 @@ function App() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch(`/api/node/`)
+    fetch(`/node/api/phrase`)
       .then(res => res.json())
       .then(data => {
         setPhrase(data.phrase)
