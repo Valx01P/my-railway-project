@@ -12,3 +12,5 @@ export default defineConfig({
     }
   }
 })
+
+// VITE_API_URL="my-railway-project-production.up.railway.app"
